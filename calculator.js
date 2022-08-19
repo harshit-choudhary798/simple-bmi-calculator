@@ -9,7 +9,10 @@ app.get("/", function(req, res) {
 });
 
 app.post("/", function(req, res) {
-     res.send("done");
+      var weight=parseFloat(req.body.weight);
+      var height=parseFloat(req.body.height);
+      var BMI=weight/(height*height);
+      res.send("yOUR BMI IS"+BMI);
 });
 
 app.listen(3000, function() {
